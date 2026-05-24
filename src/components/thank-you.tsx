@@ -20,9 +20,7 @@ export function ThankYou({ alreadyVoted }: Props) {
         </span>
         <span>{alreadyVoted ? 'you already said yes' : 'love received'}</span>
       </div>
-      <p className="text-sm text-white/40">
-        {alreadyVoted ? 'one heart per person. that&apos;s the rule.' : 'tell a friend. or just keep coding.'}
-      </p>
+      {alreadyVoted && <p className="text-sm text-white/40">one heart per person. that&apos;s the rule.</p>}
     </motion.div>
   )
 }

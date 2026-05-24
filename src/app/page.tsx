@@ -53,31 +53,8 @@ export default async function Page() {
       />
       <Starfield />
 
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-2xl flex-col items-center justify-between px-6 pb-12 pt-16 sm:pt-24">
-        <header className="text-xs uppercase tracking-wide text-white/40">iloveclaudecode.com</header>
-
+      <div className="relative z-10 mx-auto flex min-h-dvh max-w-2xl flex-col items-center justify-center px-6 py-16 sm:py-24">
         <LoveExperience initial={initial} />
-
-        <footer className="mt-12 text-xs text-white/30">
-          made with{' '}
-          <a
-            href="https://claude.com/claude-code"
-            target="_blank"
-            rel="noreferrer"
-            className="underline decoration-ember-400/40 underline-offset-4 hover:text-white/60"
-          >
-            Claude Code
-          </a>
-          {' · '}
-          <a
-            href="https://github.com/Adder-Analytics/i-love-claude-code"
-            target="_blank"
-            rel="noreferrer"
-            className="underline decoration-white/20 underline-offset-4 hover:text-white/60"
-          >
-            source
-          </a>
-        </footer>
       </div>
     </main>
   )
