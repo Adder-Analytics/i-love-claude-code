@@ -13,7 +13,7 @@ const instrumentSerif = Instrument_Serif({
 
 const SITE_URL = 'https://iloveclaudecode.com'
 const TITLE = 'Do you love Claude Code?'
-const DESCRIPTION = 'One question. One button. Say yes if you love Claude Code — and watch the love light up around the world.'
+const DESCRIPTION = 'One question. One button.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
