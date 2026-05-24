@@ -46,14 +46,14 @@ export default async function Page() {
   }))
 
   return (
-    <main className="relative isolate min-h-dvh overflow-hidden bg-night-950 text-white">
+    <main className="relative isolate min-h-dvh overflow-hidden bg-night-950 text-white sm:h-dvh">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_50%_20%,rgba(255,138,76,0.18),transparent_55%)]"
       />
       <Starfield />
 
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-2xl flex-col items-center justify-center px-6 py-16 sm:py-24">
+      <div className="relative z-10 mx-auto flex min-h-dvh max-w-2xl flex-col items-center justify-center px-6 py-8 sm:h-full sm:py-6 lg:max-w-5xl lg:py-8 xl:max-w-6xl">
         <LoveExperience initial={initial} />
       </div>
     </main>

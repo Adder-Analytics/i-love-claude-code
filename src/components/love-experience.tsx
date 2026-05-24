@@ -125,41 +125,43 @@ export function LoveExperience({ initial }: Props) {
   }, [pending, voted])
 
   return (
-    <div className="flex w-full flex-col items-center gap-12 sm:gap-16">
-      <div className="flex flex-col items-center gap-6 text-center">
-        <h1 className="font-display text-balance text-5xl text-white sm:text-7xl lg:text-8xl">
-          Do you love
-          <br />
-          <span className="text-ember-400">Claude Code?</span>
-        </h1>
+    <div className="flex w-full flex-col items-center gap-6 sm:gap-7">
+      <div className="flex w-full flex-col items-center gap-6 sm:gap-5 lg:flex-row lg:items-center lg:justify-center lg:gap-10 xl:gap-14">
+        <div className="flex flex-col items-center gap-4 text-center sm:gap-5 lg:max-w-md lg:items-start lg:text-left">
+          <h1 className="font-display text-balance text-5xl text-white sm:text-6xl lg:text-6xl xl:text-7xl">
+            Do you love
+            <br />
+            <span className="text-ember-400">Claude Code?</span>
+          </h1>
 
-        <div className="flex min-h-20 items-center">
-          <AnimatePresence mode="wait" initial={false}>
-            {voted ? (
-              <motion.div key="thanks" exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3 }}>
-                <ThankYou alreadyVoted={alreadyVoted} />
-              </motion.div>
-            ) : (
-              <motion.div key="button" exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3 }}>
-                <LoveButton onClick={onYes} pending={pending} />
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <div className="flex min-h-16 items-center sm:min-h-20">
+            <AnimatePresence mode="wait" initial={false}>
+              {voted ? (
+                <motion.div key="thanks" exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3 }}>
+                  <ThankYou alreadyVoted={alreadyVoted} />
+                </motion.div>
+              ) : (
+                <motion.div key="button" exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3 }}>
+                  <LoveButton onClick={onYes} pending={pending} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {errorNote && <p className="text-sm text-ember-300/80">{errorNote}</p>}
+
+          <p className="text-base text-white/60 sm:text-lg">
+            <Counter value={state.count} className="font-medium tabular-nums text-white" /> souls and counting
+          </p>
         </div>
 
-        {errorNote && <p className="text-sm text-ember-300/80">{errorNote}</p>}
-
-        <p className="text-base text-white/60 sm:text-lg">
-          <Counter value={state.count} className="font-medium tabular-nums text-white" /> souls and counting
-        </p>
-      </div>
-
-      <div className="relative aspect-square w-full max-w-[640px]">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,138,76,0.25),transparent_60%)] blur-2xl"
-        />
-        <Globe markers={markers} />
+        <div className="relative aspect-square w-[min(100%,42dvh,520px)] shrink-0 lg:w-[min(46vw,70dvh,540px)] xl:w-[min(48vw,80dvh,640px)]">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,138,76,0.25),transparent_60%)] blur-2xl"
+          />
+          <Globe markers={markers} />
+        </div>
       </div>
 
       <RecentCities cities={state.cities} />
